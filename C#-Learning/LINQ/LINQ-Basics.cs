@@ -10,7 +10,7 @@ public class Program
 
     //QUESTION 1 - 4 USING (Where);
 
-    // Question 1 — Even Numbers
+    // Question 1 — Even Numbers (Using Where)
     {
         List<int> num = new List<int>();
         num.Add(1);
@@ -28,7 +28,7 @@ public class Program
             Console.WriteLine(number);
         }
 
-    // Question 2 — Greater Than 50
+    // Question 2 — Greater Than 50  (Using Where)
         
         List<int> numbers = new List<int>()
         {
@@ -42,7 +42,7 @@ public class Program
             Console.WriteLine(nums);
         }
         
-    // Question 3 — Long Names
+    // Question 3 — Long Names (Using Where)
         
         List<string> names = new List<string>()
         {
@@ -63,7 +63,7 @@ public class Program
             Console.WriteLine(name);
         }
 
-    // Question 4 — Age Filter
+    // Question 4 — Age Filter (Using Where)
 
         List<int> age = new List<int>()
         {
@@ -77,8 +77,7 @@ public class Program
             Console.WriteLine(agee);
         }
 
-    // Question 1 — Double
-        
+    // Question 1 — Double (Using Select)
         List<int> numb = new List<int>()
         {
             1, 2, 3, 4,
@@ -90,5 +89,54 @@ public class Program
         {
             Console.WriteLine(number);
         }
+
+    // Question 2 — Name Length (Using Select)
+    List<string> namesList = new List<string>()
+    {
+        "Hanzala", "Umer", "Ezaz"
+    };
+    var Name = namesList.Select(n => n.Length ).ToList();
+
+    foreach(var NAME in Name)
+        {
+            Console.WriteLine(NAME);
+        }
+    
+    // Question 3 — Person → Name
+        List<Person> people = new List<Person>()
+        {
+            new Person("Hanzala", 22),
+            new Person("Ahmed", 21),
+            new Person("Umer", 23),
+        };
+
+        var personNames = people.Select(person => person.Name).ToList();
+
+        foreach(var personName in personNames)
+        {
+            Console.WriteLine(personName);
+        }
+    
+    // Question 4 — Person → Label
+        var label = people.Select(person => $"{person.Name} - {person.Age} ").ToList();
+
+        foreach(var peopleData in label)
+        {
+            Console.WriteLine(peopleData);
+        }
+    } 
+}
+
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Person (string Name, int Age)
+    {
+        this.Name = Name;
+        this.Age = Age;
     }
 }
+
+    
