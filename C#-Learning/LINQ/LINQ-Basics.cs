@@ -25,7 +25,7 @@ public class Program
         var even = num.Where(n => n%2 == 0 );
 
         foreach(var number in even){
-            Console.WriteLine(number);
+            Console.WriteLine($"{number}");
         }
 
     // Question 2 — Greater Than 50  (Using Where)
@@ -124,6 +124,31 @@ public class Program
         {
             Console.WriteLine(peopleData);
         }
+    // Question 1 OrderBy() — Ascending
+        List<OrderBY> Peoplee = new List<OrderBY>()
+        {
+           new OrderBY("Hanzala", 22, "Islamabad"),
+           new OrderBY("Ali", 21, "Rawalpindi"),
+           new OrderBY("Ahmed", 25, "Islamabad"),
+           new OrderBY("Usman", 20, "Lahore"),
+           new OrderBY("Bilal", 23, "Rawalpindi"),
+           new OrderBY("Hamza", 26, "Lahore"),
+           new OrderBY("Ahsan", 19, "Islamabad"),
+           new OrderBY("Zain", 24, "Rawalpindi"),
+        };
+        var orderBy = Peoplee.OrderBy(p => p.aGE).ToList();
+
+        foreach(var peoPle in orderBy)
+        {
+            Console.WriteLine($"{peoPle.nAME} - {peoPle.aGE} - {peoPle.city}");
+        }
+    // Question 2 OrderByDescending() — Descending
+        var orderByDecending = Peoplee.OrderByDescending(p => p.aGE).ToList();
+        
+        foreach(var people_age in orderByDecending)
+        {
+            Console.WriteLine($"{people_age.nAME}-{people_age.aGE}-{people_age.city}");
+        }
     } 
 }
 
@@ -139,4 +164,16 @@ public class Person
     }
 }
 
-    
+public class OrderBY
+{
+    public string nAME {get; set;}
+    public int aGE {get; set;}
+    public string city {get; set;}
+
+    public OrderBY(string NAME, int AGE, string CITY)
+    {
+        nAME = NAME;
+        aGE = AGE;
+        city = CITY;
+    }
+}    
