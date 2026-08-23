@@ -149,6 +149,46 @@ public class Program
         {
             Console.WriteLine($"{people_age.nAME}-{people_age.aGE}-{people_age.city}");
         }
+
+    // Question 1 — Count()
+        List<int> Num =new List<int>()
+        {
+            40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90,
+        };
+
+        var count = Num.Count();
+        Console.WriteLine($"count of Num is {count}");
+    
+    // Question 2 - Sum()
+        var sum = Num.Sum();
+        Console.WriteLine($"The total Sum of Num is {sum}");
+    
+    // Question 3 - average()
+        var average = Num.Average();
+        Console.WriteLine($"The average of Num is {average}");
+
+    // Question 4 - Max()
+        var max = Num.Max();
+        Console.WriteLine($"Max number in given Num is {max}");
+
+    // Question 5 - Min()
+        var min = Num.Min();
+        Console.WriteLine($"Min number in given Num is {min}");
+       
+       var first = Num.First(s => s > 20);
+       Console.WriteLine(first);
+
+       var firstOrDefault = Num.FirstOrDefault(s => s > 90);
+
+       if (firstOrDefault != 0)
+       {
+           Console.WriteLine(firstOrDefault);
+       }
+      else
+        {    
+           Console.WriteLine("Not found");
+        }
+
     } 
 }
 
