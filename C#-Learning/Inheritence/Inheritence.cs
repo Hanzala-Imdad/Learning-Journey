@@ -61,6 +61,29 @@ class Program
         US.Introducee();
         US.study();
         US.showuniversity();
+
+        DOG dogy = new DOG();
+        dogy.NAME = "PUPPY";
+
+        dogy.EAT();
+        dogy.bark();
+
+        cat m = new cat();
+        m.NAME = "Catie";
+        m.EAT();
+        m.meaw();
+
+        Teacher TEACH = new Teacher();
+        TEACH.name = "Proff.Akeel";
+        TEACH.Introducce();
+        TEACH.teach();
+
+        Studentt st = new Studentt();
+        st.name = "Hanzala";
+        st.Introducce();
+        st.study();
+
+        
     }
 }
 
@@ -153,6 +176,8 @@ class dog : Mammel
         Console.WriteLine("Dog is Barking");
     }
 }
+
+// Question 3 of Multilevel Inheritence "Student Chain"
 class personn
 {
    public string name;
@@ -174,5 +199,55 @@ class universityStuent : student
    public void showuniversity()
     {
        Console.WriteLine($"Name of University is {university}");
+    }
+} 
+           //-----------Hierarchical Inheritance------------//
+
+//Question 1 of Hierarchical Inheritance "Animal"
+class animal
+{
+    public string NAME ;
+    public void EAT()
+    {
+        Console.WriteLine($"{NAME} is Eating");
+    }
+}
+class DOG : animal
+{
+    public void bark()
+    {
+        Console.WriteLine($"Dog says woouf");
+    }
+}
+class cat : animal
+{
+    public void meaw()
+    {
+        Console.WriteLine("Cat says meaw");
+    }
+}
+
+//Question 2 of Hierarchical Inheritance "Person"
+class Personn
+{
+    public string name;
+    public void Introducce()
+    {
+        Console.WriteLine($"my name is {name}");
+    }
+
+}
+class Studentt : Personn
+{
+    public void study()
+    {
+        Console.WriteLine("I,am doing studies");
+    }
+}
+ class Teacher : Personn
+{
+    public void teach()
+    {
+        Console.WriteLine($"{name} teaching a lesson ");
     }
 }
