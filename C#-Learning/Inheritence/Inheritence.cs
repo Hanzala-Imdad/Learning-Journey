@@ -83,6 +83,15 @@ class Program
         st.Introducce();
         st.study();
 
+        Puppy play=new Puppy();
+        play.eat();
+        play.bark();
+        play.play();
+
+        CAT meaw = new CAT();
+        meaw.eat();
+        meaw.meaw();
+
         
     }
 }
@@ -249,5 +258,35 @@ class Studentt : Personn
     public void teach()
     {
         Console.WriteLine($"{name} teaching a lesson ");
+    }
+}
+          //------------HYBRID INHERITENCE------------//
+//Question 1 of Hybrid Inheritence "Animal Hybrid"
+class ANIMAL
+{
+    public void eat()
+    {
+        Console.WriteLine("Animal is eating");
+    }
+}
+class DOg :ANIMAL
+{
+    public void bark()
+    {
+        Console.WriteLine("Dog is barking");
+    }
+} 
+class CAT : ANIMAL
+{
+    public void meaw()
+    {
+        Console.WriteLine("cat says meaw");
+    }
+}
+class Puppy : DOg
+{
+    public void play()
+    {
+        Console.WriteLine("Puppy is playing");
     }
 }
