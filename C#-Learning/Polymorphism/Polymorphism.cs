@@ -189,7 +189,7 @@ class Dog : Animal
         Console.WriteLine("Dog says Wooof!");
     }
 }
-
+// Question 2 of Run-Time Polimorphism (Overridng)
 class Vehicle
 {
     public virtual void Start()
@@ -204,6 +204,7 @@ class Car : Vehicle
         Console.WriteLine("Car Engine Started");
     }
 }
+// Question 3 of Run-Time Polimorphism (Overridng)
 class Employee
 {
     public virtual void Work()
@@ -225,6 +226,7 @@ class Designer : Employee
         Console.WriteLine("Designer is creating a Design");
     }
 }
+// Question 4 of Run-Time Polimorphism (Overridng)
 class Person
 {
     public virtual void showInfo()
