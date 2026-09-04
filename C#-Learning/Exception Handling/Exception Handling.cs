@@ -72,5 +72,47 @@ class Program
         {
             Console.WriteLine("An unexpected error occurred: " + ex.Message);
         }
+        //Question: 4 of Exeption Handling
+        Console.WriteLine("\n=====Question 4 of Exception Handling=====");
+        Console.WriteLine("Enter Your Balance");
+        double balance = 0;
+        try
+        {
+            balance = double.Parse(Console.ReadLine());
+            if (balance < 0)
+            {
+                throw new ArgumentOutOfRangeException("Balance cannot be negative");
+            }
+        }
+        catch (ArgumentOutOfRangeException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number for balance.");
+            Console.WriteLine(ex.Message);
+        }
+        Console.WriteLine("Your Balance is: " + balance);
+        Console.WriteLine("Enter Your Withdraw Amount");
+        try
+        {
+            double withdrawAmount = double.Parse(Console.ReadLine());
+            if (withdrawAmount > balance)
+            {
+                throw new InvalidOperationException("Insufficient funds for withdrawal.");
+            }
+            balance -= withdrawAmount;
+            Console.WriteLine("Withdrawal successful. New balance: " + balance);
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Invalid input. Please enter a valid number for withdrawal amount.");
+            Console.WriteLine(ex.Message);
+        }
     }
 }
